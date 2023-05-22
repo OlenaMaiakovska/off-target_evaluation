@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=MuTect2      
+#SBATCH --job-name=Mutect2      
 #SBATCH -c 32                  
 #SBATCH -p single
-#SBATCH --output=MuTect2_%j.log  
+#SBATCH --output=Mutect2_%j.log  
 #SBATCH --time 14-0
 
 # Set path to java, gatk, picard and reference files:
