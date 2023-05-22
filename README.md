@@ -9,3 +9,10 @@ DRAGEN Graph based algorithm uses alt-aware mapping for population haplotypes st
 Human genome version = hg38
 https://www.illumina.com/products/by-type/informatics-products/basespace-sequence-hub/apps/dragen-germline.html 
 
+
+## Post-alignment Quality Control
+
+Post-alignment quality control is conducted to evaluate the accuracy and reliability of the aligned reads. This process entails assessing various alignment metrics, including mapping quality, coverage depth, and insert size distribution, which collectively verify the quality of the alignment outcomes.
+
+## Variant calling
+
