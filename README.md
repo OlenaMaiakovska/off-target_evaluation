@@ -38,3 +38,4 @@ Scripts run via docker:
 ```bash
 ClinSV.txt
 ```
+[![DOI](https://zenodo.org/badge/643891130.svg)](https://zenodo.org/badge/latestdoi/643891130)
