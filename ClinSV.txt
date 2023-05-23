@@ -1,0 +1,11 @@
+#Run via docker 
+
+refdata_path=$PWD/clinsv/refdata-b38
+input_path=$PWD
+mkdir all_test
+project_folder=$PWD/all_test
+
+docker run -v $refdata_path:/app/ref-data -v $project_folder:/app/project_folder  -v $input_path:/app/input  --entrypoint "perl" mrbradley2/clinsv:v1.0 /app/clinsv/bin/clinsv -r all -p /app/project_folder/ -i "/app/input/*.bam" -ref /app/ref-data/refdata-b38
+
+#Re-run for all samples together:
+#Place all bam files in $PWD directory and submit the job
