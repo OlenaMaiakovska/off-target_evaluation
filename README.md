@@ -10,9 +10,16 @@ Human genome version = hg38
 https://www.illumina.com/products/by-type/informatics-products/basespace-sequence-hub/apps/dragen-germline.html 
 
 
-## Post-alignment Quality Control
+## Post-alignment Quality Control and Data Processing 
 
 Post-alignment quality control is conducted to evaluate the accuracy and reliability of the aligned reads. This process entails assessing various alignment metrics, including mapping quality, coverage depth, and insert size distribution, which collectively verify the quality of the alignment outcomes.
+
+Scripts used:
+```bash
+Duplicates_mark_and_removal.sh
+Duplicates_removal_samtools.sh
+```
+Samplot was used as an alternative way of duplicates removal. 
 
 ## Variant calling
 
