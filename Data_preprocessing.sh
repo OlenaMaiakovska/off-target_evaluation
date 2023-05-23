@@ -8,15 +8,14 @@
 # Set path to java, gatk, picard and reference files:
 JAVA="/home/bin/jdk-15/bin/java"
 GATK="/home/gatk-4.2.2.0/gatk" 
-VCF_DIR="/home/input_data" 
 REF="/home/reference/Homo_sapiens_assembly38.fasta"
 KNOWN_SITES_SNP="/home/reference/Homo_sapiens_assembly38.dbsnp138.vcf"
 KNOWN_SITES_INDEL="/home/reference/Homo_sapiens_assembly38.known_indels.vcf.gz"
 PICARD="/home/picard/build/libs/picard.jar"
 
 # File name and directory:
-VCF_FILE="dedup_DON-449-6xKO.hg38.alignment.bam"
-VCF_DIR="/home/449_6KO_Picard"
+BAM_FILE="dedup_DON-449-6xKO.hg38.alignment.bam"
+BAM_DIR="/home/449_6KO_Picard"
 
 # Read Group Sample:
 RGSM=449_6KO
@@ -25,7 +24,7 @@ RGSM=449_6KO
 cd $VCF_DIR
 
 #RGPl:read group platform, LB: read group library, RGPU:platform unit, SM: sample name
-$JAVA -jar $PICARD AddOrReplaceReadGroups I=$VCF_DIR/$VCF_FILE O=RG_dedup_file.bam RGID=DON RGLB=lib1 RGPL=ILLUMINA SORT_ORDER=coordinate RGPU=unit1 RGSM=$RGSM
+$JAVA -jar $PICARD AddOrReplaceReadGroups I=$BAM_DIR/$BAM_FILE O=RG_dedup_file.bam RGID=DON RGLB=lib1 RGPL=ILLUMINA SORT_ORDER=coordinate RGPU=unit1 RGSM=$RGSM
 
 $GATK --java-options -Xmx16G BaseRecalibrator -R $REF -I RG_dedup_file.bam --known-sites $KNOWN_SITES_SNP --known-sites $KNOWN_SITES_INDEL -O ./recal_data_file.table 
 
